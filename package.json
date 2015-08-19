@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Download Utility",
   "main": "index.js",
+  "bin": {
+    "jet": "./bin.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

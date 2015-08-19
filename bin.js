@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs');
 var hyperquest = require('hyperquest');
 
@@ -54,3 +56,5 @@ var get = function (url) {
   var name = fileName(url);
   fileSize(name, request(url, name));
 };
+
+get(process.argv[2]);
