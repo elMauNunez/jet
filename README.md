@@ -8,11 +8,11 @@ Command-line download tool for the Node.js platform.
 npm i -g jet-dwnldr
 ```
 
-###$ usage
+#### usage
 
 jet-dwnldr URL
 
-###$ how it works
+#### how it works
 
 Basically, it works like wget --continue.
 
@@ -28,7 +28,7 @@ If the status code of the response is 400 or greater, it will stop and print the
 
 If you don't have write permissions in the current directory, it will stop and print an error message.
 
-### References
+#### References
 
 - Partially downloads: [Wget Manpage](https://www.gnu.org/software/wget/manual/wget.html#Download-Options)
 - Node file system API: [fs](https://iojs.org/api/fs.html)
