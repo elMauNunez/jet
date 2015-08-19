@@ -7,6 +7,7 @@ var fileName = function (url) {
   return url.split('/').pop() || 'index.html';
 };
 
+// Pass the size of a file to a callback function.
 var fileSize = function (name, callback) {
   fs.stat(name, function (err, stats) {
     if (!stats)
