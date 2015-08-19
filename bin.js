@@ -24,9 +24,12 @@ var fileAppend = function (name, data) {
   });
 };
 
-var handleData = function (size, name) {
+var handleData = function (currentSize, remainingSize, name) {
+  var totalSize = currentSize + remainingSize;
+  var accumulator = currentSize;
   return function (data) {
-    console.log(name, data);
+    accumulator += data.length;
+    console.log(parseInt(accumulator / totalSize * 100) + '%');
     fileAppend(name, data);
   };
 };
@@ -34,8 +37,8 @@ var handleData = function (size, name) {
 var handleResponse = function (size, name) {
   return function (res) {
     if (badStatus(res.statusCode)) throw res.statusMessage;
-    var totalFileSize = size + Number(res.headers['content-length']);
-    res.on('data', handleData(totalFileSize, name));
+    var remainingSize = Number(res.headers['content-length']);
+    res.on('data', handleData(size, remainingSize, name));
   };
 };
 
