@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/elMauNunez/jet/issues"
   },
-  "homepage": "https://github.com/elMauNunez/jet#readme"
+  "homepage": "https://github.com/elMauNunez/jet#readme",
+  "dependencies": {
+    "hyperquest": "^1.2.0"
+  }
 }

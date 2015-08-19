@@ -1,4 +1,5 @@
 var fs = require('fs');
+var hyperquest = require('hyperquest');
 
 var fileName = function (url) {
   return url.split('/').pop() || 'index.html';
