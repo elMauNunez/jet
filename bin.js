@@ -21,3 +21,8 @@ var request = function (url) {
     req.on('response', console.log);
   };
 };
+
+var get = function (url) {
+  var name = fileName(url);
+  fileSize(name, request(url));
+};
