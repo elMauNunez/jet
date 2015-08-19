@@ -10,7 +10,9 @@ npm i -g jet-dwnldr
 
 #### usage
 
+```
 jet-dwnldr URL
+```
 
 #### how it works
 
