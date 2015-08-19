@@ -12,3 +12,11 @@ var fileSize = function (name, callback) {
     return callback(stats.size);
   });
 };
+
+var request = function (url) {
+  return function (size) {
+    var req = hyperquest(url);
+    req.setHeader('Range', 'bytes=' + size + '-');
+    req.on('response', console.log);
+  };
+};
