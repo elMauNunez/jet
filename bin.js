@@ -18,9 +18,16 @@ var badStatus = function (statusCode) {
   return Number(statusCode) >= 400;
 };
 
+var fileAppend = function (name, data) {
+  fs.appendFile(name, data, function (err) {
+    if (err) throw 'Cannot write ' + name;
+  });
+};
+
 var handleData = function (size, name) {
   return function (data) {
-    console.log(data);
+    console.log(name, data);
+    fileAppend(name, data);
   };
 };
 
